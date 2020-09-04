@@ -1,39 +1,27 @@
-
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-
-function getText (swit) {
-    if (swit) {
-      return "text change 1";
+{
+  "expo": {
+    "name": "rn-first-app",
+    "slug": "rn-first-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
     }
-    return "text change 2";
   }
-
-export default function App() {
-  const [outputText, setOutputText] = useState('Open up App.js to start');
-  const [text2, changed2] = useState('my second text');
-  const [swit, switChange] = useState(false);
-
-  return (
-    <View style={styles.container}>
-      <Text>{outputText} </Text>
-      <Text> {text2} </Text>
-      <Button title= "Change Text" onPress={() => {
-        switChange(!swit);
-        setOutputText(getText(swit));
-        changed2(' second changed'); 
-      }
-      }  /> 
-    </View>
-  );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
